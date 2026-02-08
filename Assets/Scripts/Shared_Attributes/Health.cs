@@ -74,11 +74,14 @@ public class Health : MonoBehaviour
     // }
     void Die()
     {
+        
         if (isDead) return;
         isDead = true;
 
         Debug.Log(gameObject.name + " DIED");
         
+        GetComponent<DragonSFX>()?.PlayDeath();
+
         // goes to battleManager
         onDeath?.Invoke();
 
