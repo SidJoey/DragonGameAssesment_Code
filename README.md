@@ -56,7 +56,7 @@ The goal of this project was to demonstrate foundational Unity skills, clean gam
 ## Playable Build
 A playable Windows build is available here:
 
-👉 // add link
+👉 https://github.com/SidJoey/DragonDuelGame_Builds
 
 Tested on Windows 10/11.
 
