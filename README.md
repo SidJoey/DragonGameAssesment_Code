@@ -1,6 +1,6 @@
 # 🐉 Dragon Duel – Junior Game Developer Assessment
 
-<img width="889" height="487" alt="Screenshot 2026-02-08 211426" src="https://github.com/user-attachments/assets/163987e5-57bd-4fa3-81d1-b9c961210c8d" />
+<img width="1920" height="1080" alt="Builds Screenshot 2026 02 08 - 22 59 51 64" src="https://github.com/user-attachments/assets/9a659067-20be-4189-afe7-7195354fa453" />
 
 ## Overview
 Dragon Duel is a small 2.5D top-down combat prototype built in Unity.  
