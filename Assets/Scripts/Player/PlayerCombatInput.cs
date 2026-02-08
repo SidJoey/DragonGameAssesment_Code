@@ -35,6 +35,12 @@ public class PlayerCombatInput : MonoBehaviour
 {
     private Animator animator;
 
+    [Header("Ability Icons")]
+    public AbilityIcon fireIcon;
+    public AbilityIcon meleeIcon;
+    public AbilityIcon flyIcon;
+
+
     // === Combat Lock ===
     public bool IsLocked { get; private set; }
 
@@ -56,16 +62,19 @@ public class PlayerCombatInput : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // LEFT CLICK - Fireball
         {
             StartAttack("FireAttack");
+            fireIcon.SetAvailable(false);
         }
 
         if (Input.GetMouseButtonDown(1)) // RIGHT CLICK - Melee
         {
             StartAttack("MeeleAttack");
+            meleeIcon.SetAvailable(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) // SPACE - Fly Attack
         {
             StartAttack("FlyAttack");
+            flyIcon.SetAvailable(false);
         }
     }
 
@@ -81,5 +90,10 @@ public class PlayerCombatInput : MonoBehaviour
         Debug.Log("EndAttack() called");
         IsLocked = false;
         nextAttackTime = Time.time + attackCooldown;
+        
+        // for the icons
+        fireIcon.SetAvailable(true);
+        meleeIcon.SetAvailable(true);
+        flyIcon.SetAvailable(true);
     }
 }
