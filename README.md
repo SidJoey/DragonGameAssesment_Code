@@ -101,7 +101,7 @@ The current architecture was intentionally designed to support these extensions 
 ---
 
 ## Unity Version
-- Unity **2022.x (URP)**
+- Unity **6.3 (URP)**
 
 ---
 
