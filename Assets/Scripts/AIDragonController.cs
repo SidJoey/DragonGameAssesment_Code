@@ -11,6 +11,8 @@ public class AIDragonController : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     private float cooldown;
+    
+    private bool isAttacking;
 
     void Awake()
     {
@@ -21,6 +23,13 @@ public class AIDragonController : MonoBehaviour
     void Update()
     {
         if (!target) return;
+
+        if (isAttacking)
+        {
+            agent.isStopped = true;
+            animator.SetFloat("MoveSpeed", 0f);
+            return;
+        }
 
         float dist = Vector3.Distance(transform.position, target.position);
 
@@ -51,12 +60,34 @@ public class AIDragonController : MonoBehaviour
     void ChooseAttack()
     {
         float roll = Random.value;
-
+        
         if (roll < 0.6f)
             animator.SetTrigger("MeeleAttack");
         else if (roll < 0.9f)
             animator.SetTrigger("FireAttack");
         else
             animator.SetTrigger("FlyAttack");
+
+        
+        // // Debug Purpose V1
+        // float roll = 9f;
+        // if (roll > 8f)
+        // {
+        //     animator.SetTrigger("FlyAttack");
+        //     
+        // }
+        
+        
+        // // Debug Purpose v2
+        // if (isAttacking) return;
+        //
+        // isAttacking = true;
+        //
+        // animator.SetTrigger("FlyAttack");
+    }
+
+    public void EndAttack()
+    {
+        isAttacking = false;
     }
 }
