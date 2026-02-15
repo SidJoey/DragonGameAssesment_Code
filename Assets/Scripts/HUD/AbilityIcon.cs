@@ -17,4 +17,5 @@ public class AbilityIcon : MonoBehaviour
         colour.a = available ? 1f : 0.35f;
         iconImage.color = colour;
     }
+    
 }

@@ -78,6 +78,13 @@ public class Health : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
+        var combat = GetComponent<PlayerCombatController>();
+        if (combat != null)
+        {
+            Debug.Log("Combat controller for the player exists");
+            combat.setDead();
+        }
+
         Debug.Log(gameObject.name + " DIED");
         
         GetComponent<DragonSFX>()?.PlayDeath();

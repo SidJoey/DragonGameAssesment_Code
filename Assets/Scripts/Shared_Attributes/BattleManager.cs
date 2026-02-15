@@ -48,12 +48,20 @@ public class BattleManager : MonoBehaviour
     {
         // Debug.Log("StopAllGameplay ENTERED");
 
-        Disable<PlayerMovement>();
+        #region Older Combat & movement disables
+
+        // Disable<PlayerMovement>();
         // Debug.Log("After disabling PlayerMovement");
 
-        Disable<PlayerCombatInput>();
-        // Debug.Log("After disabling PlayerCombatInput");
+        // Disable<PlayerCombatInput>();
+        // // Debug.Log("After disabling PlayerCombatInput");
 
+        #endregion
+        
+        Disable<PCInputHandler>();
+        Disable<PlayerCombatController>();
+        Disable<PlayerMovementController>();
+        Disable<MobileMovementInputHandler>();
         Disable<AIDragonController>();
         // Debug.Log("After disabling AIDragonController");
 
